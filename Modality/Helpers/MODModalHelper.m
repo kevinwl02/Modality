@@ -17,13 +17,13 @@ static char * const kTapGestureTargetControllerAssociationKey = "tapGestureTarge
 
 @implementation MODModalHelper
 
-+ (NSLayoutConstraint *)setupFrameForView:(UIView *)view inContainerView:(UIView *)containerView withSize:(CGSize)size andDirection:(MODDirection)direction offset:(CGFloat)offset {
++ (NSLayoutConstraint *)setupFrameForView:(UIView *)view inContainerView:(UIView *)containerView withLength:(CGFloat)length andDirection:(MODDirection)direction offset:(CGFloat)offset {
     
-    view.frame = CGRectMake(0, 0, size.width, size.height);
+    view.frame = CGRectMake(0, 0, length, length);
     view.translatesAutoresizingMaskIntoConstraints = NO;
     
-    CGFloat widthOffset = [MODPropertiesHelper signForXAxisWithDirection:direction] * offset * size.width * -1;
-    CGFloat heightOffset = [MODPropertiesHelper signForYAxisWithDirection:direction] * offset * size.height * -1;
+    CGFloat widthOffset = [MODPropertiesHelper signForXAxisWithDirection:direction] * offset * length * -1;
+    CGFloat heightOffset = [MODPropertiesHelper signForYAxisWithDirection:direction] * offset * length * -1;
     
     switch (direction) {
         case MODDirectionTop:

@@ -18,23 +18,24 @@
 @interface MODModalTransitioningBase : MODDirectionalTransitioningBase
 
 /**
- *  The size for the destination view that will be used
- *  for displaying it as a modal view.
+ *  The length for the destination view that will be used
+ *  for displaying it as a modal view. The length is applied
+ *  depending on the specified direction.
  */
-@property (nonatomic, assign) CGSize destinationViewSize;
+@property (nonatomic, assign) CGFloat destinationViewLength;
 
 /**
  *  Factory method that returns an instance of the transition
  *  animator configured with the specified parameters.
  *
- *  @param direction           The direction for the modal
+ *  @param direction             The direction for the modal
  *  presentation
- *  @param destinationViewSize The size for the destination
+ *  @param destinationViewLength The length for the destination
  *  view
  *
  *  @return A set up transition animator
  */
 + (instancetype)transitionAnimatorWithDirection:(MODDirection)direction
-                            destinationViewSize:(CGSize)destinationViewSize;
+                          destinationViewLength:(CGFloat)destinationViewLength;
 
 @end

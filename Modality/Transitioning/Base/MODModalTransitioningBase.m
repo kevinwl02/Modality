@@ -18,11 +18,11 @@
 #pragma mark - Factory methods
 
 + (instancetype)transitionAnimatorWithDirection:(MODDirection)direction
-                            destinationViewSize:(CGSize)destinationViewSize {
+                          destinationViewLength:(CGFloat)destinationViewLength {
 
     MODModalTransitioningBase *modalTransitioningBase = [[self class] new];
     modalTransitioningBase.direction = direction;
-    modalTransitioningBase.destinationViewSize = destinationViewSize;
+    modalTransitioningBase.destinationViewLength = destinationViewLength;
     
     return modalTransitioningBase;
 }

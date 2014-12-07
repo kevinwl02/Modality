@@ -36,13 +36,13 @@
         [toView layoutIfNeeded];
         [container addSubview:toView];
         
-        self.animationConstraint = [MODModalHelper setupFrameForView:toView inContainerView:container withSize:self.destinationViewSize andDirection:self.direction offset:1];
+        self.animationConstraint = [MODModalHelper setupFrameForView:toView inContainerView:container withLength:self.destinationViewLength andDirection:self.direction offset:1];
         self.initialAnimationConstant = self.animationConstraint.constant;
         [container layoutIfNeeded];
         
         UIView *snapshotView = [MODViewHelper onePixelLineStretchedSnapshotOfView:toView withDirection:self.direction];
         [container insertSubview:snapshotView belowSubview:toView];
-         NSLayoutConstraint *snapshotAnimationConstraint = [MODModalHelper setupFrameForView:snapshotView inContainerView:container withSize:self.destinationViewSize andDirection:self.direction offset:2];
+         NSLayoutConstraint *snapshotAnimationConstraint = [MODModalHelper setupFrameForView:snapshotView inContainerView:container withLength:self.destinationViewLength andDirection:self.direction offset:2];
         [container layoutIfNeeded];
         
         CGFloat constraintDifference = snapshotAnimationConstraint.constant - self.animationConstraint.constant;

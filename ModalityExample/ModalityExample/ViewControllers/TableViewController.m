@@ -95,7 +95,12 @@
     
     UIViewController *modalController = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalViewController"];
     
-    MODTransitionAnimatorSlideModal *animator = [MODTransitionAnimatorSlideModal transitionAnimatorWithDirection:button.tag destinationViewSize:CGSizeMake(self.view.bounds.size.width, 150)];
+    CGFloat viewLength = 150;
+    if (button.tag == MODDirectionLeft || button.tag == MODDirectionRight) {
+        viewLength = self.view.bounds.size.width;
+    }
+    
+    MODTransitionAnimatorSlideModal *animator = [MODTransitionAnimatorSlideModal transitionAnimatorWithDirection:button.tag destinationViewLength:viewLength];
     [self MOD_presentViewController:modalController withTransitionAnimator:animator duration:MODDefaulTransitionDuration completion:nil];
 }
 
@@ -103,7 +108,12 @@
     
     UIViewController *modalController = [self.storyboard instantiateViewControllerWithIdentifier:@"ModalViewController"];
     
-    MODTransitionAnimatorFlipModal *animator = [MODTransitionAnimatorFlipModal transitionAnimatorWithDirection:button.tag destinationViewSize:CGSizeMake(self.view.bounds.size.width, 150)];
+    CGFloat viewLength = 150;
+    if (button.tag == MODDirectionLeft || button.tag == MODDirectionRight) {
+        viewLength = self.view.bounds.size.width;
+    }
+    
+    MODTransitionAnimatorFlipModal *animator = [MODTransitionAnimatorFlipModal transitionAnimatorWithDirection:button.tag destinationViewLength:viewLength];
     [self MOD_presentViewController:modalController withTransitionAnimator:animator duration:MODDefaulTransitionDuration completion:nil];
 }
 

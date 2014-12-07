@@ -16,12 +16,12 @@
 @interface MODModalHelper : NSObject
 
 /**
- *  Sets up the autolayout options of a view based on size
+ *  Sets up the autolayout options of a view based on length
  *  and specified direction.
  *
  *  @param view          The view to autolayout
  *  @param containerView The super view
- *  @param size          The size to which constraint the view
+ *  @param length        The length to which constraint the view
  *  @param direction     The direction where the view should be
  *  placed
  *  @param offset        An additional offset for the view's
@@ -29,7 +29,7 @@
  *
  *  @return The generated constraint related to the direction
  */
-+ (NSLayoutConstraint *)setupFrameForView:(UIView *)view inContainerView:(UIView *)containerView withSize:(CGSize)size andDirection:(MODDirection)direction offset:(CGFloat)offset;
++ (NSLayoutConstraint *)setupFrameForView:(UIView *)view inContainerView:(UIView *)containerView withLength:(CGFloat)length andDirection:(MODDirection)direction offset:(CGFloat)offset;
 
 /**
  *  Adds a background for modal transitions. This background

@@ -25,7 +25,7 @@
         [toView layoutIfNeeded];
         [container addSubview:toView];
         
-        [MODModalHelper setupFrameForView:toView inContainerView:container withSize:self.destinationViewSize andDirection:self.direction offset:0];
+        [MODModalHelper setupFrameForView:toView inContainerView:container withLength:self.destinationViewLength andDirection:self.direction offset:0];
         
         [self flipView:toView horizontal:horizontal];
         toView.alpha = 0;
