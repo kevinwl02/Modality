@@ -11,6 +11,7 @@ The ModalityExample project contains the source code for the example.
 ##Getting started
 
 Modality is available on [CocoaPods](http://cocoapods.org).
+In your `podfile` add:
 
 ```ruby
 pod 'Modality', '~> 0.0.1'
